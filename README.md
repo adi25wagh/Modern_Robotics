@@ -12,7 +12,7 @@ The task entails moving the cube from (x,y)=(1,0) to (x,y)=(0,-1).\
 ![bestSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/best/bestSimFig.png?raw=true)
 
 **Simulation**
-![bestSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/best/bestSim.gif?raw=true)
+![bestSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/best/bestSim.gif)
 
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
@@ -27,7 +27,7 @@ The task entails moving the cube from (x,y)=(1,0) to (x,y)=(0,-1).\
 ![overshootSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/overshoot/overshootSimFig.png?raw=true)
 
 **Simulation**
-![overshootSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/overshoot/overshootSim.gif?raw=true)
+![overshootSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/overshoot/overshootSim.gif)
 
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
@@ -42,7 +42,7 @@ The task entails moving the cube from (x,y)=(1,-1) to (x,y)=(-1,1).\
 ![newTaskSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/newTask/newTaskFig.png?raw=true)
 
 **Simulation**
-![newTaskSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/newTask/newTaskSim.gif?raw=true)
+![newTaskSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/newTask/newTaskSim.gif)
 
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
