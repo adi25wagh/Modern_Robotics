@@ -13,17 +13,17 @@ Simulation results towards completing the course are displayed below. Primary ap
 </details>
 
 <details>
-
 <summary> Overshoot </summary>
+
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
 |		  |				 5.5|            3|                False|
 </details>
 
 <details>
-
 <summary> New Task </summary>
+
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
-|Value    |				 5.5|            3|                 True|
+|         |				 5.5|            3|                 True|
 </details>
