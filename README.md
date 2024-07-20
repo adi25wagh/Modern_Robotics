@@ -1,8 +1,9 @@
 # Modern Robotics
 
 ## Capstone Project
-The Capstone project includes implementing software to execute a pic and place operation. The robot for the same is a YouBot with a universal mobile base and a 5-DOF robot arm. The same can be described on: [Modern Robotics Capstone Project](https://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone). The material referred to is found [here](https://hades.mech.northwestern.edu/index.php/Modern_Robotics). \
-Simulation results towards completing the course are displayed below. Primary approaches dealt with implementing a PI controller with Feed-forward correcting towards the computed *error-twist*.
+    The Capstone project includes implementing software to execute a pic and place operation. The robot for the same is a YouBot with a universal mobile base and a 5-DOF robot arm. The same can be described on: [Modern Robotics Capstone Project](https://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone). The material referred to is found [here](https://hades.mech.northwestern.edu/index.php/Modern_Robotics). <br>
+
+    Simulation results towards completing the course are displayed below. Primary approaches dealt with implementing a PI controller with Feed-forward correcting towards the computed *error-twist*.
 
 <details>
 <summary> Best Simulation</summary>
@@ -48,5 +49,4 @@ The task entails moving the cube from (x,y)=(1,-1) to (x,y)=(-1,1).\
 |--------:|-----------------|-------------|---------------------|
 |     Value|				 5.5|            3|                 True|
 
-![image]()
 </details>
