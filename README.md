@@ -11,9 +11,10 @@ Simulation results towards completing the course are displayed below. Primary ap
 The task entails moving the cube from (x,y)=(1,0) to (x,y)=(0,-1).\
 **Error-Twist over time.**
 ![bestSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/best/bestSimFig.png?raw=true)
-
+<br>
 **Simulation**
 ![bestSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/best/bestSim.gif?raw=true)
+<br>
 
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
@@ -26,10 +27,10 @@ The task entails moving the cube from (x,y)=(1,0) to (x,y)=(0,-1).\
 The task entails moving the cube from (x,y)=(1,0) to (x,y)=(0,-1).\
 **Error-Twist over time.**
 ![overshootSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/overshoot/overshootSimFig.png?raw=true)
-
+<br>
 **Simulation**
 ![overshootSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/overshoot/overshootSim.gif?raw=true)
-
+<br>
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
 |		 Value|				 5.5|            3|                False|
@@ -41,10 +42,10 @@ The task entails moving the cube from (x,y)=(1,0) to (x,y)=(0,-1).\
 The task entails moving the cube from (x,y)=(1,-1) to (x,y)=(-1,1).\
 **Error-Twist over time.**
 ![newTaskSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/newTask/newTaskFig.png?raw=true)
-
+<br>
 **Simulation**
 ![newTaskSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/newTask/newTaskSim.gif?raw=true)
-
+<br>
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
 |     Value|				 5.5|            3|                 True|
