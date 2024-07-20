@@ -1,7 +1,7 @@
 # Modern Robotics
 
 ## Capstone Project
-The Capstone project includes implementing software intended to execute a pic and place operation. The robot for the the same is a YouBot with a universal mobile base and a 5-DOF robot arm. Descriptions for the same can be found on: [Modern Robotics Capstone Project](https://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone). The material referred is found [here](https://hades.mech.northwestern.edu/index.php/Modern_Robotics). \
+The Capstone project includes implementing software to execute a pic and place operation. The robot for the same is a YouBot with a universal mobile base and a 5-DOF robot arm. The same can be described on: [Modern Robotics Capstone Project](https://hades.mech.northwestern.edu/index.php/Mobile_Manipulation_Capstone). The material referred to is found [here](https://hades.mech.northwestern.edu/index.php/Modern_Robotics). \
 Simulation results towards completing the course are displayed below. Primary approaches dealt with implementing a PI controller with Feed-forward correcting towards the computed *error-twist*.
 
 <details>
@@ -12,11 +12,11 @@ The task entails moving the cube from (x,y)=(1,0) to (x,y)=(0,-1).\
 ![bestSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/best/bestSimFig.png?raw=true)
 
 **Simulation**
-![bestSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/best/bestSim.gif)
+![bestSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/best/bestSim.gif?raw=true)
 
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
-|		 Value|				 |            3|                 True|
+|		 Value|				 5.5|            3|                 True|
 </details>
 
 <details>
@@ -27,7 +27,7 @@ The task entails moving the cube from (x,y)=(1,0) to (x,y)=(0,-1).\
 ![overshootSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/overshoot/overshootSimFig.png?raw=true)
 
 **Simulation**
-![overshootSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/overshoot/overshootSim.gif)
+![overshootSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/overshoot/overshootSim.gif?raw=true)
 
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
@@ -42,7 +42,7 @@ The task entails moving the cube from (x,y)=(1,-1) to (x,y)=(-1,1).\
 ![newTaskSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/newTask/newTaskFig.png?raw=true)
 
 **Simulation**
-![newTaskSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/newTask/newTaskSim.gif)
+![newTaskSim](https://github.com/adi25wagh/Modern_Robotics/blob/main/results/newTask/newTaskSim.gif?raw=true)
 
 |Parameter|Proportional Gain|Integral Gain|Feed-Forwards enabled|
 |--------:|-----------------|-------------|---------------------|
