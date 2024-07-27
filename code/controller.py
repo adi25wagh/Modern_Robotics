@@ -4,7 +4,7 @@ import modern_robotics as mr
 class controller:
     def __init__(self, ff: bool = True, kp: float = 0.0, ki: float = 0.0,  dt: float = 0.01, k: float = 10):
         
-        # controller simulation time
+        # controller simulation time (faster than actual update time step.)
         self.delta_t = dt / k
 
         # Control input matrices
@@ -14,37 +14,39 @@ class controller:
         if ff:
             self.ff = np.eye(6)
     
-        # transformation matrix
+        # Matrix to map twist vector to wheen inputs
         r = 0.0475
         l = 0.235
         w = 0.15
         self.F = r/4 * np.array([[0,0,0,0],[0,0,0,0],[-1/(l+w),1/(l+w),1/(l+w),-1/(l+w)],[1,1,1,1],[-1,1,-1,1],[0,0,0,0]])
+
+        # transformation from {b} to {s}
         self.T_sb = lambda q: np.array([
-            # Configuration of base {b} relative to {s}
             [np.cos(q[0]), -np.sin(q[0]), 0, q[1]],
             [np.sin(q[0]),  np.cos(q[0]), 0, q[2]],
             [0,             0,            1, 0.0963],
             [0,             0,            0, 1]])
-        # Tb0
+       
+        # static transformation from {e}/{0} to {b}
         self.Tb0 = np.array([[ 1, 0, 0, 0.1662],
 				    [ 0, 1, 0,   0],
 				    [ 0, 0, 1, 0.0026],
 				    [ 0, 0, 0,   1]])
         
-        # Mlist
+        # Mlist for robot arm (for FK)
         self.Mlist = np.array([[ 1, 0, 0, 0.033],
 				    [ 0, 1, 0,   0],
 				    [ 0, 0, 1, 0.6546],
 				    [ 0, 0, 0,   1]])
         
-        # Blist
+        # Blist for robot arm (for FK)
         self.Blist = np.array([[0, 0, 1,   0, 0.033, 0],
                       [0,-1, 0,-0.5076,  0, 0],
                       [0,-1, 0,-0.3526,  0, 0],
                       [0,-1, 0,-0.2176,  0, 0],
                       [0, 0, 1,   0,     0, 0]]).T
 
-        # Integral Error
+        # Integral Error storage container.
         self.integral_error = np.zeros((6,))
 
     def computeControlInput(self, current_configuration, Xd, Xdn):
@@ -64,7 +66,7 @@ class controller:
         Xerr = mr.se3ToVec(mr.MatrixLog6(np.dot(mr.TransInv(X), Xd))) # Compute current error state
         self.integral_error = self.integral_error + Xerr * self.delta_t # Increment integral errro upto current state
 
-        # Desired twist is FF + PID
+        # Desired twist is FF + PI
         V = ( np.dot(self.ff, np.dot(Adj, Vd)) # Feedforward
             + np.dot(self.Kp,Xerr) # Proportional correction
             + np.dot(self.Ki,self.integral_error) )# Integral correction
@@ -93,6 +95,7 @@ class controller:
         return J
     
 def execute_test():
+    # test to verify functionality.
     config = np.array([0, 0, 0, 0, 0, 0.2, -1.6, 0])
     Xd = np.array([[ 0, 0, 1, 0.5],
 			   [ 0, 1, 0,   0],

@@ -23,7 +23,8 @@ def mobileManipulation():
         [-1, 0, 0, 0.5],
         [0, 0, 0, 1],
         ])
-
+    
+    # Gather previously completed parts.
     trajGen = trajectoryGenerator(T_se_init= trajInit, solver_type = "Cartesian", k = segmentsPerTimeStep, dt = timeStep, methodval = 5)
     eulerSolver = nextState(delta_t = timeStep / segmentsPerTimeStep, omega_max = [40,40,40,40,40, 60, 60, 60, 60])
     feedbackCont = controller(ff = FFon, kp = KP, ki = KI, dt = timeStep, k = segmentsPerTimeStep)
@@ -33,14 +34,16 @@ def mobileManipulation():
     trajectory, gripperState = trajGen.toTransformations()
     nTimeStamps = len(trajectory)
 
+    # initialize starting state of robot
     robotState = np.array([0.5,-0.4,0.4, 0.0, 0.5, -0.8, -0.9, 1,0,0,0,0,0])
     robotState[12] = gripperState[0] # initialize gripper state
-    robotTraj = [] # Variable to traj the trajectory of the robot
+    robotTraj = [] # Variable to store the trajectory of the robot
     stateError = []
     rmsError = []
     integralError = []
-    idx2 = 1
+    idx2 = 1 # additional index to store values at instances.
     for idx in range(nTimeStamps-1):
+        # compute inputs to controller
         Xd = trajectory[idx]
         Xdn = trajectory[idx+1]
         grip = gripperState[idx]
@@ -60,6 +63,7 @@ def mobileManipulation():
         robotState[0:12] = eulerSolver.step(robotState[0:12], control_inputs)
         robotState[12] = grip
         
+    # Print rms error to allow for quick testing.
     print(f'RMS Error: {np.mean(rmsError)}')
 
     # Plot trajectory error

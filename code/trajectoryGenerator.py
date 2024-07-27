@@ -38,6 +38,7 @@ class Cube_Configuration:
         self.T_grasp = T_grasp
 
 def trajSolver(solverType):
+    # Pass function handles of trajectory solvers desired.
     solver = mr.CartesianTrajectory
     if solverType == "Screw":
         solver = mr.ScrewTrajectory
@@ -185,6 +186,7 @@ class trajectoryGenerator:
         return np.linalg.norm(q), np.max((theta, phi, psi))
     
     def tolist(self):
+        # convert trajectory to a list inside a list with configuration values for each instant.
         outlist = []
         for idx in range(len(self.gripperValue)):
             traj = self.Trajectory[idx, :, :]
@@ -198,6 +200,7 @@ class trajectoryGenerator:
         return outlist
     
     def toTransformations(self):
+        # convert trajectory to a list of transformations.
         outlist = []
         for idx in range(self.Trajectory.shape[0]):
             traj = self.Trajectory[idx,:,:]
@@ -206,6 +209,7 @@ class trajectoryGenerator:
         return outlist, self.gripperValue
 
 def execute_test():
+    # Test to verify functionality.
     T_start = np.array([
         [0, 0, 1, 0.2],
         [0, 1, 0, 0.2],
